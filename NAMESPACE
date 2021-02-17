@@ -1,0 +1,7 @@
+exportPattern(".")
+export(dpilc)
+import(
+  KernSmooth, MASS, glmnet, np, Matrix
+)
+importFrom("stats", "dnorm", "coef", "lm")
+useDynLib(sharpPen)
