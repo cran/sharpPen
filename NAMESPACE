@@ -3,5 +3,6 @@ export(dpilc)
 import(
   KernSmooth, MASS, glmnet, np, Matrix
 )
-importFrom("stats", "dnorm", "coef", "lm")
+importFrom("stats", "dnorm", "coef", "lm", "nls", "var")
 useDynLib(sharpPen)
+

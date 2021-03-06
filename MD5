@@ -1,6 +1,7 @@
-2d6b16f0c50de34df4f2a1a8e252349e *DESCRIPTION
-a8f803fb65568a90a95ca58222be8c42 *NAMESPACE
+22715d68824fb0fe60033e1ad6ed19a7 *DESCRIPTION
+3c6a41db6f47abbc5a409138163e682f *NAMESPACE
 500caebd08f2bd969ffdb98f49620aaa *R/RELsharpening.R
+c9fff845c55b58ae190af6ecc41cb52a *R/data_sharpening.R
 6e8e2f0428bc5745261ea3a7c812429c *R/dpilc.R
 44447b858e0fc1697053691d88ec91a2 *R/getA.R
 ea3389ff6be2818220e9bb71337fdbb2 *R/getB.R
@@ -15,6 +16,7 @@ a865337d1e80368dfac2e2bed9a72db5 *R/relsharp_mean.R
 27136615fe29d4e275cf77eb623cee4c *R/testfun.R
 9672c20580394070f9117778cfcaa560 *data/noontemp.rda
 ab2e607fa52f61cbcd75ddcfb9288152 *man/RELsharpening.Rd
+8db5d6ccd22b93dc2ba668434dfbeae6 *man/data_sharpening.Rd
 0ea22fa12eadf47d0db95064f87ad347 *man/dpilc.Rd
 b3c8ff28b9448b0c3c72fe7c536fb1b8 *man/getA.Rd
 2ba165fe3660325cf497097789aa5b58 *man/getB.Rd
