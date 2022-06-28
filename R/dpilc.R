@@ -147,7 +147,7 @@ dpilc <- function(xx, yy, blockmax = 5, divisor = 20, trim = 0.01,
   
   
   
-  sdiag <- function(x, drv = 0L, degree = 1L, 
+  sdiag <- function(x, drv = 0L, degree = 3L, 
                     bandwidth,range.x)
   {
     
@@ -248,7 +248,7 @@ dpilc <- function(xx, yy, blockmax = 5, divisor = 20, trim = 0.01,
   
   
   
-  sstdiag <- function(x, drv = 0L, degree = 1L, 
+  sstdiag <- function(x, drv = 0L, degree = 3L, 
                       bandwidth, range.x)
   {
     
@@ -301,13 +301,16 @@ dpilc <- function(xx, yy, blockmax = 5, divisor = 20, trim = 0.01,
   
   
   cpsd<-function(X,Y,qq,Nmax){
-    RSS<-rep(0,Nmax); n <- length(X)
+    RSS<-rep(0,Nmax)
+    n <- length(X)
     for (Nval in 1:Nmax){
       idiv<-floor(n/Nval)
       for (j in 1:Nval){
         ilow<-(j-1)*idiv+1
         iupp<-j*idiv
-        if (j == Nval) iupp <- n
+        if (j == Nval){
+           iupp <- n
+         }
         nj<-iupp-ilow+1
         Xj<-numeric(nj)
         Yj<-numeric(nj) 
@@ -414,7 +417,7 @@ dpilc <- function(xx, yy, blockmax = 5, divisor = 20, trim = 0.01,
   
   ## Now compute a local linear kernel estimate of
   ## the variance.
-  mest <- locpoly(xcounts, ycounts, bandwidth=lamseh,
+  mest <- locpoly(xcounts, ycounts,degree=3, bandwidth=lamseh,
                   range.x=range.x, binned=TRUE)$y
   Sdg <- sdiag(xcounts, bandwidth=lamseh,
                range.x=range.x)$y

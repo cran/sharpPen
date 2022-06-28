@@ -1,5 +1,5 @@
 Package: sharpPen
-Version: 1.7
+Version: 1.8
 Title: Penalized Data Sharpening for Local Polynomial Regression
 Authors@R: c(person("W.J.", "Braun", role = c("aut"), 
              email = "john.braun@ubc.ca"), 
@@ -17,6 +17,6 @@ Description: Functions and data sets for penalized data sharpening.
     and other kinds of penalties. 
 License: Unlimited
 NeedsCompilation: yes
-Packaged: 2021-03-03 00:44:45 UTC; root
+Packaged: 2022-06-27 23:22:59 UTC; root
 Repository: CRAN
-Date/Publication: 2021-03-06 05:40:03 UTC
+Date/Publication: 2022-06-28 03:20:02 UTC
