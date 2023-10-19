@@ -1,4 +1,4 @@
-getA<-function(h,xx,zz,p){
+lprOperator<-function(h,xx,zz,p){
   A<-matrix(0,ncol=length(zz),nrow=length(xx))
   getX<-function(p,xx,x){	
     X<-matrix(0,ncol=p+1,nrow=length(xx))

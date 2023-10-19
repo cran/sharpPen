@@ -1,4 +1,4 @@
-getB<-function(penalty,gamma,h, xx,zz,p){
+derivOperator<-function(penalty,gamma,h, xx,zz,p){
   B<-matrix(0,ncol=length(zz),nrow=length(xx))
   getX<-function(p,xx,x){	
     X<-matrix(0,ncol=p+1,nrow=length(xx))
@@ -22,11 +22,17 @@ getB<-function(penalty,gamma,h, xx,zz,p){
     
     aaFunt<-function(x) {getaa(h,xx,x,p)}
     bb<-rep(0,length(xx))
-    if(penalty=="R1"){
+    if(penalty=="drv1"){
       bb<-numericalDerivative(x,aaFunt,k=1)
     }
-    if(penalty=="Roughness"){
+    if(penalty=="drv2"){
       bb<-numericalDerivative(x,aaFunt,k=2)
+    }
+    if(penalty=="drv3"){
+      bb<-numericalDerivative(x,aaFunt,k=3)
+    }
+    if(penalty=="drv4"){
+      bb<-numericalDerivative(x,aaFunt,k=4)
     }
     if(penalty=="Exponential"){
       bb<-numericalDerivative(x,aaFunt,k=2)+gamma*numericalDerivative(x,aaFunt,k=1)
@@ -34,7 +40,9 @@ getB<-function(penalty,gamma,h, xx,zz,p){
     if(penalty=="Periodicity"){
       bb<-numericalDerivative(x,aaFunt,k=4)+gamma*numericalDerivative(x,aaFunt,k=2)
     }
-    
+    if(penalty=="Periodicity2"){
+    bb<-numericalDerivative(x,aaFunt,k=2)+gamma*numericalDerivative(x,aaFunt,k=0)
+    }      
     bb
   }
   

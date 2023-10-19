@@ -1,7 +1,8 @@
 exportPattern(".")
 export(dpilc)
+export(DR_sharpen)
 import(
-  KernSmooth, MASS, glmnet, np, Matrix
+  KernSmooth, glmnet, np, Matrix, locpol
 )
 importFrom("stats", "dnorm", "coef", "lm", "nls", "var")
 useDynLib(sharpPen)

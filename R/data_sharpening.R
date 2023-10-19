@@ -1,11 +1,11 @@
-data_sharpening<-function(xx,yy,zz,p,h1=NULL,gammaest=NULL,penalty,lambda=NULL){
+data_sharpening<-function(xx,yy,zz,p,h=NULL,gammaest=NULL,penalty,lambda=NULL){
   n<-length(xx)
   if(penalty=="Periodicity"){
-    if(is.null(h1)){
+    if(is.null(h)){
       if(p==1){
-        h1<-dpill(xx,yy)
+        h<-dpill(xx,yy)
       }else if(p==2 | p==3){
-        h1<-dpilc(xx,yy)
+        h<-dpilc(xx,yy)
       }
     }
     if(is.null(gammaest)){
@@ -13,7 +13,7 @@ data_sharpening<-function(xx,yy,zz,p,h1=NULL,gammaest=NULL,penalty,lambda=NULL){
             the number of periods this data has.")
     }
     if(is.null(lambda)){
-      B1<-getB(penalty="Periodicity",gamma=(gammaest*pi)^2,h1,xx=xx,zz=zz,p)
+      B1<-derivOperator(penalty="Periodicity",gamma=(gammaest*pi)^2,h,xx=xx,zz=zz,p)
       yp1<-t(B1)%*%yy
       sdy1<-sqrt(var(yp1)*(length(yp1)-1)/length(yp1))[1,1]
       lambda_max <- max(abs(colSums(as.matrix(t(B1))*as.vector(yp1))))/(dim(t(B1))[1]*0.001)
@@ -37,11 +37,11 @@ data_sharpening<-function(xx,yy,zz,p,h1=NULL,gammaest=NULL,penalty,lambda=NULL){
     y_sharp<-solve(diag(n)+lambda*B1%*%t(B1))%*%yy
     }
   if(penalty=="Exponential"){
-    if(is.null(h1)){
+    if(is.null(h)){
       if(p==1){
-        h1<-dpill(xx,yy)
+        h<-dpill(xx,yy)
       }else if(p==2 | p==3){
-        h1<-dpilc(xx,yy)
+        h<-dpilc(xx,yy)
       }
     }
     if(is.null(gammaest)){
@@ -52,7 +52,7 @@ data_sharpening<-function(xx,yy,zz,p,h1=NULL,gammaest=NULL,penalty,lambda=NULL){
       gammaest<-coef(fm)[2]
     }
     if(is.null(lambda)){
-      B1<-getB(penalty="Exponential",gamma=-gammaest,h1,xx=xx,zz=zz,p)
+      B1<-derivOperator(penalty="Exponential",gamma=-gammaest,h,xx=xx,zz=zz,p)
       yp1<-t(B1)%*%yy
       sdy1<-sqrt(var(yp1)*(length(yp1)-1)/length(yp1))[1,1]
       lambda_max <- max(abs(colSums(as.matrix(t(B1))*as.vector(yp1))))/(dim(t(B1))[1]*0.001)

@@ -1,12 +1,12 @@
-\name{getA}
-\alias{getA}
+\name{lprOperator}
+\alias{lprOperator}
 \title{Local Polynomial Estimator Matrix Construction}
 \description{
   Construct a matrix based on the local polynomial estimation at 
   a corresponding sequence of x data and sequence of gridpoint z.
 }
 \usage{
-  getA(h,xx,zz,p)
+  lprOperator(h,xx,zz,p)
 }
 \arguments{
   \item{h}{the kernel bandwidth smoothing parameter.}

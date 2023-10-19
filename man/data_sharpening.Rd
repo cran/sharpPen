@@ -7,7 +7,7 @@ Penalized data sharpening for Local Linear, Quadratic and Cubic Regression
 Penalized data sharpening has been proposed as a way to enforce certain constraints on a local polynomial regression estimator. In addition to a bandwidth, a coefficient of the penalty term is also required. We propose propose systematic approaches for choosing these tuning parameters, in part, by considering the optimization problem from the perspective of ridge regression.  
 }
 \usage{
-data_sharpening(xx,yy,zz,p,h1=NULL,gammaest=NULL,penalty,lambda=NULL)
+data_sharpening(xx,yy,zz,p,h=NULL,gammaest=NULL,penalty,lambda=NULL)
 }
 \arguments{
 \item{xx}{
@@ -25,7 +25,7 @@ numeric vector of gridpoint z data. Missing values are not accepted.
 \item{p}{
 degree of local polynomial used.
 } 
-\item{h1}{
+\item{h}{
 the kernel bandwidth smoothing parameter. If NULL, this value
 will be estimated by function dpill for Local Linear Regression, and
 will be estimated by function dpilc for Local Quadratic and Cubic 
@@ -55,9 +55,9 @@ the sharpened response variable.
   yy<-g(xx)+rnorm(100,sd=sigma)
   zz<-xx
   h1<-dpilc(xx,yy)
-  local_fit<-t(getA(h=h1,xx=xx,zz=zz,p=2))\%*\%yy
+  local_fit<-t(lprOperator(h=h1,xx=xx,zz=zz,p=2))\%*\%yy
   y_sharp<-data_sharpening(xx=xx,yy=yy,zz=zz,p=2,gammaest=gamest,penalty="Periodicity")
-  sharp_fit<-t(getA(h=h1,xx=xx,zz=zz,p=2))\%*\%y_sharp
+  sharp_fit<-t(lprOperator(h=h1,xx=xx,zz=zz,p=2))\%*\%y_sharp
   plot(c(min(xx),max(xx)),c(min(yy)-0.5,max(yy)+0.5),type="n",,xlab="x",ylab="y")
   legend("bottomright",legend=c("curve_local","curve_sharpen"), col=c(1,3),bty="n",pch=c("-","-"))
   lines(xx,local_fit)
