@@ -1,10 +1,11 @@
-a557debe2af66c32b9c998f5ca58ad50 *DESCRIPTION
+40bcfc8e87aa8468a52d649f5addd07f *DESCRIPTION
 4b23cd676bfd355115e6e408e3e10a12 *NAMESPACE
 003c2ad3512ac707fa9ad66e6f510fa1 *R/DR_sharpen.R
 500caebd08f2bd969ffdb98f49620aaa *R/RELsharpening.R
 48a591cb5100cc10de72741c67172c1e *R/data_sharpening.R
 4a2e3c7599560180a8c927ff82bf7253 *R/derivOperator.R
 2bce52f59b42459fcab76900e27fdb72 *R/dpilc.R
+b88c6643d937126a4cf3a0471b2ada37 *R/dpilc_PTW.R
 673516d45cc2a7dbd91da2bd3a5bba89 *R/lprOperator.R
 748884d4c62f76318154d2e39be442b7 *R/numericalDerivative.R
 0be6f491341c712a7ed6c457460e02b1 *R/projection_C.R
@@ -22,7 +23,8 @@ e5479fa55dd970111e0da5d8afd820a7 *R/relsharpen.R
 ab2e607fa52f61cbcd75ddcfb9288152 *man/RELsharpening.Rd
 6a9c5b14018597f710372509769316a0 *man/data_sharpening.Rd
 5cfe60d792445c978aabb03df03063a9 *man/derivOperator.Rd
-0ea22fa12eadf47d0db95064f87ad347 *man/dpilc.Rd
+3ffdbbf38acc256f5e525ed81b2b39c4 *man/dpilc.Rd
+83063abc0499c5655c6f2a4455458997 *man/dpilc_PTW.Rd
 2c177eeff368c5dc51dfbc7752b26548 *man/lprOperator.Rd
 7830300c2b0117a320ba0d2c5bef99e6 *man/noontemp.Rd
 31c2377ac363004d4121549dbba08b0d *man/numericalDerivative.Rd

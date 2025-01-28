@@ -94,7 +94,7 @@ Wand, M. P. and Jones, M. C. (1995).
 Chapman and Hall, London.
 }
 \seealso{
-\code{\link{ksmooth}}, \code{\link{locpoly}}.
+\code{\link[stats]{ksmooth}}, \code{\link[KernSmooth]{locpoly}}.
 }
 \examples{
 x <- faithful$eruptions
@@ -110,4 +110,4 @@ fit <- locpoly(x, y, bandwidth = h, degree=3)
 lines(fit, col=2, lwd=2)
 }
 \author{D.Wang and W.J.Braun}
-\keyword{nonparametric}
+\keyword{models}
